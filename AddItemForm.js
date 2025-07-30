@@ -1,4 +1,6 @@
+
 import React, { useState } from 'react';
+import InputField from './InputField';
 
 function AddItemForm({ onAddItem }) {
   const [formData, setFormData] = useState({
@@ -17,6 +19,7 @@ function AddItemForm({ onAddItem }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (!formData.name || !formData.price || !formData.quantity) return;
 
     const newItem = {
@@ -37,33 +40,33 @@ function AddItemForm({ onAddItem }) {
 
   return (
     <form onSubmit={handleSubmit} className="item-form">
-      <input
-        type="text"
+      <InputField
+        label="Item Name"
         name="name"
-        placeholder="Item Name"
+        type="text"
         value={formData.name}
         onChange={handleChange}
         required
       />
-      <input
-        type="text"
+      <InputField
+        label="Description"
         name="description"
-        placeholder="Description"
+        type="text"
         value={formData.description}
         onChange={handleChange}
       />
-      <input
-        type="number"
+      <InputField
+        label="Price"
         name="price"
-        placeholder="Price"
+        type="number"
         value={formData.price}
         onChange={handleChange}
         required
       />
-      <input
-        type="number"
+      <InputField
+        label="Quantity"
         name="quantity"
-        placeholder="Quantity"
+        type="number"
         value={formData.quantity}
         onChange={handleChange}
         required
