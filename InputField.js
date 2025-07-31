@@ -1,24 +1,21 @@
-import React, { useState } from 'react';
-import './App.css';
-import AddItemForm from './AddItemForm';
-import ItemList from './ItemList';
-import TotalAmount from './TotalAmount';
 
-function App() {
-  const [items, setItems] = useState([]);
+import React from 'react';
 
-  const handleAddItem = (newItem) => {
-    setItems([...items, newItem]);
-  };
-
+function InputField({ label, name, type, value, onChange, required = false }) {
   return (
-    <div className="app-container">
-      <h1>Bill Generator</h1>
-      <AddItemForm onAddItem={handleAddItem} />
-      <ItemList items={items} />
-      <TotalAmount items={items} />
+    <div className="input-group">
+      <label htmlFor={name}>{label}</label>
+      <input
+        type={type}
+        id={name}
+        name={name}
+        value={value}
+        onChange={onChange}
+        placeholder={label}
+        required={required}
+      />
     </div>
   );
 }
 
-export default App;
+export default InputField;
