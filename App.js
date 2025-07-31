@@ -11,11 +11,15 @@ function App() {
     setItems([...items, newItem]);
   };
 
+  const handleRemoveItem = (indexToRemove) => {
+    setItems(prevItems => prevItems.filter((_, index) => index !== indexToRemove));
+  };
+
   return (
     <div className="app-container">
       <h1>Bill Generator</h1>
       <AddItemForm onAddItem={handleAddItem} />
-      <ItemList items={items} />
+      <ItemList items={items} onRemoveItem={handleRemoveItem} />
       <TotalAmount items={items} />
     </div>
   );
