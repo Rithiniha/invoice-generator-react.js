@@ -19,7 +19,7 @@ function App() {
     <div className="app-container">
       <h1>Bill Generator</h1>
       <AddItemForm onAddItem={handleAddItem} />
-      <ItemList items={items} onRemoveItem={handleRemoveItem} />
+      <ItemList items={items} onRemove={handleRemoveItem} />
       <TotalAmount items={items} />
     </div>
   );
