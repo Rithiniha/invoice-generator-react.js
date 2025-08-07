@@ -1,16 +1,15 @@
 import React, { useState } from 'react';
+import './App.css';
 
 function AddItemForm({ onAddItem }) {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [price, setPrice] = useState('');
   const [quantity, setQuantity] = useState('');
-
   const [errors, setErrors] = useState({});
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
 
     const newErrors = {};
     if (!name.trim()) newErrors.name = 'Please fill this field.';
@@ -28,7 +27,6 @@ function AddItemForm({ onAddItem }) {
         quantity: parseInt(quantity),
       });
 
-
       setName('');
       setDescription('');
       setPrice('');
@@ -39,7 +37,6 @@ function AddItemForm({ onAddItem }) {
   return (
     <form className="item-form" onSubmit={handleSubmit}>
       <div className="input-wrapper">
-        {errors.name && <div className="error-message">{errors.name}</div>}
         <input
           type="text"
           placeholder="Item Name"
@@ -47,10 +44,10 @@ function AddItemForm({ onAddItem }) {
           onChange={(e) => setName(e.target.value)}
           className={errors.name ? 'error-input' : ''}
         />
+        {errors.name && <div className="error-message">{errors.name}</div>}
       </div>
 
       <div className="input-wrapper">
-        {errors.description && <div className="error-message">{errors.description}</div>}
         <input
           type="text"
           placeholder="Description"
@@ -58,10 +55,10 @@ function AddItemForm({ onAddItem }) {
           onChange={(e) => setDescription(e.target.value)}
           className={errors.description ? 'error-input' : ''}
         />
+        {errors.description && <div className="error-message">{errors.description}</div>}
       </div>
 
       <div className="input-wrapper">
-        {errors.price && <div className="error-message">{errors.price}</div>}
         <input
           type="number"
           placeholder="Price"
@@ -69,10 +66,10 @@ function AddItemForm({ onAddItem }) {
           onChange={(e) => setPrice(e.target.value)}
           className={errors.price ? 'error-input' : ''}
         />
+        {errors.price && <div className="error-message">{errors.price}</div>}
       </div>
 
       <div className="input-wrapper">
-        {errors.quantity && <div className="error-message">{errors.quantity}</div>}
         <input
           type="number"
           placeholder="Quantity"
@@ -80,9 +77,10 @@ function AddItemForm({ onAddItem }) {
           onChange={(e) => setQuantity(e.target.value)}
           className={errors.quantity ? 'error-input' : ''}
         />
+        {errors.quantity && <div className="error-message">{errors.quantity}</div>}
       </div>
 
-      <button type="submit">Add Item</button>
+      <button type="submit" className="submit-btn">Add Item</button>
     </form>
   );
 }
