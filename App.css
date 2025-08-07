@@ -1,0 +1,128 @@
+.app-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: sans-serif;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.item-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 180px;
+  position: relative;
+}
+
+.input-wrapper input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1em;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+.input-wrapper input.error-input {
+  border: 2px solid #dc3545 !important;
+  background-color: #fff0f0;
+}
+
+
+.error-message {
+  color: #dc3545;
+  font-size: 0.75em;
+  height: 16px;
+  margin-top: 4px;
+  visibility: hidden;
+}
+
+
+.input-wrapper input.error-input + .error-message {
+  visibility: visible;
+}
+
+.item-form button {
+  padding: 10px 20px;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  height: 42px;
+  align-self: flex-end;
+}
+
+.item-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.item-table th,
+.item-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: center;
+}
+
+.total {
+  text-align: right;
+  font-size: 1.2em;
+  color: #222;
+}
+
+.action-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  margin: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.action-button:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+.sort-button {
+  margin-left: 6px;
+  padding: 4px 8px;
+  font-size: 0.85em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #eee;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  color: #1b1919;
+}
+
+.sort-button:hover {
+  background-color: #ddd;
+}
+
+.sort-button.selected {
+  background-color: #333;
+  color: rgb(5, 240, 56);
+  font-weight: bold;
+}
+
