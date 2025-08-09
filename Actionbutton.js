@@ -9,7 +9,7 @@ function ActionButton({ label, onClick, color }) {
       style={{ backgroundColor: color }}
      >
       {label}
-    </button>
+    </button> 
   );
 }
 
