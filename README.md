@@ -15,12 +15,14 @@ It supports **manual item management** (add/remove), fetching initial data from 
 
 ---
 
-''' ## 📂 Project Structure
+## Project Structure
+```
 ├── public/
 │   ├── data.json           # Initial items data
 ├── src/
 │   ├── App.js              # Main component logic
-│   ├── components/         # (Optional) Reusable components
+│   ├── components/         # (Optional) Reusable components like AddItemForm, ItemList, TotalAmount
 ├── package.json
 ├── README.md
-'''
+```
+
