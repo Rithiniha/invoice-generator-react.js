@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import AddItemForm from './AddItemForm';
 import ItemList from './ItemList';
@@ -7,8 +7,23 @@ import TotalAmount from './TotalAmount';
 function App() {
   const [items, setItems] = useState([]);
 
+  useEffect(() => {
+    fetch('/data.json') 
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Failed to fetch data.json');
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log("Fetched JSON:", data); 
+        setItems(data.items);
+      })
+      .catch(error => console.error('Error loading data.json:', error));
+  }, []);
+
   const handleAddItem = (newItem) => {
-    setItems([...items, newItem]);
+    setItems(prev => [...prev, newItem]);
   };
 
   const handleRemoveItem = (indexToRemove) => {
