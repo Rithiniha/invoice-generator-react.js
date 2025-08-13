@@ -1,0 +1,22 @@
+{
+  "items": [
+    {
+      "name": "Notebook",
+      "description": "notebook",
+      "price": 200,
+      "quantity": 2
+    },
+    {
+      "name": "Pen",
+      "description": "ballpoint pen",
+      "price": 20,
+      "quantity": 5
+    },
+    {
+      "name": "Eraser",
+      "description": "White eraser",
+      "price": 10,
+      "quantity": 3
+    }  
+  ]
+}
