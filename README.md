@@ -15,7 +15,7 @@ It supports **manual item management** (add/remove), fetching initial data from 
 
 ---
 
-## 📂 Project Structure
+''' ## 📂 Project Structure
 ├── public/
 │   ├── data.json           # Initial items data
 ├── src/
@@ -23,4 +23,4 @@ It supports **manual item management** (add/remove), fetching initial data from 
 │   ├── components/         # (Optional) Reusable components
 ├── package.json
 ├── README.md
-
+'''
