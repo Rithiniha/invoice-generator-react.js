@@ -17,9 +17,10 @@ It supports **manual item management** (add/remove), fetching initial data from 
 
 ## 📂 Project Structure
 ├── public/
-│ ├── data.json # Initial items data
+│   ├── data.json           # Initial items data
 ├── src/
-│ ├── App.js # Main component logic
-│ ├── components/ # (Optional) Reusable components
+│   ├── App.js              # Main component logic
+│   ├── components/         # (Optional) Reusable components
 ├── package.json
 ├── README.md
+
