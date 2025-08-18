@@ -5,7 +5,7 @@ function ActionButton({ label, onClick, color }) {
   return (
     <button
       className="action-button" 
-      onClick={onClick}
+      onClick={onClick} 
       style={{ backgroundColor: color }}
      >
       {label}
